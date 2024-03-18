@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <StartupObject>Key_Fort.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="LoginDb.cs" />
+    <Compile Remove="RegisterView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="castel.ico" />
+    <None Remove="Images\arrow_icon.png" />
+    <None Remove="Images\back-image.jpg" />
+    <None Remove="Images\castel4.png" />
+    <None Remove="Images\key-icon.png" />
+    <None Remove="Images\key-icon1.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\mail.png" />
+    <None Remove="Images\rubbishbin.png" />
+    <None Remove="Images\trash-can-regular.png" />
+    <None Remove="Images\trash-can-regular.svg" />
+    <None Remove="Images\trash-can.png" />
+    <None Remove="Images\trashcan.png" />
+    <None Remove="Images\user-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="RegisterView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="castle.ico" />
+    <Content Include="Images\castel.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="App\" />
+    <Folder Include="_data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.9" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\arrow_icon.png" />
+    <Resource Include="Images\back-image.jpg" />
+    <Resource Include="Images\castel4.png" />
+    <Resource Include="Images\key-icon.png" />
+    <Resource Include="Images\key-icon1.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\mail.png" />
+    <Resource Include="Images\trash-can-regular.png" />
+    <Resource Include="Images\trash-can.png" />
+    <Resource Include="Images\trashcan.png" />
+    <Resource Include="Images\user-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
