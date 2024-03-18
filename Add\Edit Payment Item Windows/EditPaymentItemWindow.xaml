@@ -1,0 +1,247 @@
+﻿<Window x:Class="Key_Fort.EditPaymentItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Key_Fort"
+        MouseDown="Window_MouseDown"
+        mc:Ignorable="d"
+        Background="#21252D"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Icon="/Images/castel4.png"
+        WindowStartupLocation="CenterScreen"
+        Title="EditPaymentItemWindow" Height="470" Width="350">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,435">
+            <TextBlock
+            Foreground="White"
+            FontSize="20"
+            Margin="82,10,0,0"
+            HorizontalAlignment="Center"
+            FontWeight="Medium"
+            FontFamily="Montserrat"
+            TextAlignment="Center"
+            Height="24" RenderTransformOrigin="0.514,0.5"><Run Language="en-gb" Text="Edit Payment Item" FontWeight="Bold" FontFamily="Montserrat"/></TextBlock>
+            <Button x:Name="BtnExit" 
+    BorderThickness="0"
+    Content="x"
+    Foreground="White"
+    FontSize="16"
+    FontFamily="Montserrat"
+    Cursor="Hand"
+    Width="25"
+    Height="25"
+    Click="btnClose_Click"
+    Padding="0,0,0,0"
+    Margin="42,2,0,0">
+
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#28AEED"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#278BEF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+
+            </Button>
+
+        </StackPanel>
+        <Rectangle Fill="#2F343F" Width="330" Height="2" StrokeThickness="5" Margin="10,39,10,429" RadiusX="0.5" RadiusY="0.5"/>
+
+        <TextBlock Text="Item Name"
+       Foreground="White"
+       FontSize="14"
+       FontWeight="Medium"
+       VerticalAlignment="Top"
+       FontFamily="Montserrat"  
+       HorizontalAlignment="Center"
+       Margin="0,62,0,0"/>
+
+        <TextBox Name="ItemNameBox"
+     FontSize="13"
+     FontWeight="Medium"
+     FontFamily="Montserrat"                            
+     Foreground="White"
+     CaretBrush="White"
+     Background="#21252D"
+     BorderBrush="White"
+     BorderThickness="0,0,0,2"
+     Height="28"
+     VerticalContentAlignment="Center"
+     Margin="70,90,70,352"
+     Padding="2,0,0,0"
+     >
+
+        </TextBox>
+
+        <TextBlock Text="CardHolder Name"
+  Foreground="White"
+  FontSize="14"
+  FontWeight="Medium"
+  VerticalAlignment="Top"
+  FontFamily="Montserrat"  
+  HorizontalAlignment="Center"
+  Margin="0,138,0,0"/>
+
+        <TextBox Name="CardNameBox"
+FontSize="13"
+FontWeight="Medium"
+FontFamily="Montserrat"                            
+Foreground="White"
+Background="#21252D"
+CaretBrush="White"
+BorderBrush="White"
+BorderThickness="0,0,0,2"
+Height="28"
+VerticalContentAlignment="Center"
+Margin="70,160,70,282"
+Padding="2,0,0,0"
+>
+
+        </TextBox>
+        <TextBlock Text="Card Number"
+            Foreground="White"
+            FontSize="14"
+            FontWeight="Medium"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"  
+            HorizontalAlignment="Center"
+            Margin="0,218,0,0"/>
+        <TextBox x:Name="CardNumberBox"
+            FontSize="13"
+            FontWeight="Medium"
+            MaxLength="16"
+            PreviewTextInput="NumberValidationTextBox"
+            FontFamily="Montserrat"                            
+            Foreground="White"
+            Background="#21252D"
+            CaretBrush="White"
+            BorderBrush="White"
+            BorderThickness="0,0,0,2"
+            Height="28"
+            VerticalContentAlignment="Center"
+            Margin="70,240,70,202"
+            Padding="2,0,0,0"
+            />
+        <TextBlock Text="Security Code"
+            Foreground="White"
+            FontSize="14"
+            FontWeight="Medium"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"  
+            HorizontalAlignment="Left"
+            Margin="69,288,0,0"/>
+        <TextBox x:Name="SecurityCodeBox"
+            FontSize="13"
+            MaxLength="4"
+            PreviewTextInput="NumberValidationTextBox"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                            
+            Foreground="White"
+            Background="#21252D"
+            CaretBrush="White"
+            BorderBrush="White"
+            BorderThickness="0,0,0,2"
+            Height="28"
+            VerticalContentAlignment="Center"
+            Margin="75,310,190,132"
+            Padding="2,0,0,0"
+            />
+        <ComboBox Name="ComboBox1" IsEditable="True" HorizontalAlignment="Center" Margin="0,370,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+
+        <Button x:Name="BtnSave" 
+            BorderThickness="0"
+            Content="Save"
+            Margin="146,420,146,25"
+            Foreground="White"
+            FontSize="12"
+            FontFamily="Montserrat"
+            Cursor="Hand"
+            Height="25"
+            Click="btnSave_Click">
+
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#28AEED"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#278BEF"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="2"/>
+                </Style>
+            </Button.Resources>
+
+
+        </Button>
+        <TextBlock Name="RegisterErrorLabel" FontFamily="Montserrat" FontSize="14" Foreground="White"  HorizontalAlignment="Left" Margin="240,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" Height="40"/>
+        <TextBox Name="ExpiryBox1"
+            FontSize="13"
+            PreviewTextInput="NumberValidationTextBox"
+            MaxLength="2"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                         
+            Foreground="White"
+            Background="#21252D"
+            CaretBrush="White"
+            BorderBrush="White"
+            BorderThickness="0,0,0,2"
+            Height="28"
+            VerticalContentAlignment="Center"
+            Margin="180,310,125,132"
+            Padding="2,0,0,0"
+            />
+        <TextBox Name="ExpiryBox2"
+            FontSize="13"
+            MaxLength="2"
+            PreviewTextInput="NumberValidationTextBox"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                            
+            Foreground="White"
+            Background="#21252D"
+            CaretBrush="White"
+            BorderBrush="White"
+            BorderThickness="0,0,0,2"
+            Height="28"
+            VerticalContentAlignment="Center"
+            Margin="234,310,70,132"
+            Padding="2,0,0,0"
+            />
+        <TextBlock Text="Expiry Date"
+            Foreground="White"
+            FontSize="14"
+            FontWeight="Medium"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"  
+            HorizontalAlignment="Left"
+            Margin="188,288,0,0"/>
+        <TextBlock Text="/"
+            Foreground="White"
+            FontSize="14"
+            FontWeight="Medium"
+            VerticalAlignment="Top"
+            FontFamily="Montserrat"  
+            HorizontalAlignment="Left"
+            Margin="228,320,0,0"/>
+
+    </Grid>
+</Window>
